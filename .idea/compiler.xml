@@ -9,8 +9,5 @@
         <module name="LibraryApp_DB" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="LibrarySprint" target="11" />
-    </bytecodeTargetLevel>
   </component>
 </project>
