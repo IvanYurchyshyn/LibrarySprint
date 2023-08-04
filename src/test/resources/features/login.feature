@@ -2,7 +2,7 @@ Feature: Login Functionality
 
   @db
   Scenario: Login with valid credentials
-    Given the user logged in  "librarian37@library" and "libraryUser"
+    Given the user logged in  "librarian32@library" and "libraryUser"
     When user gets username  from user fields
     Then the username should be same with database
 
