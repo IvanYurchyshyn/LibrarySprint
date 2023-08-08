@@ -1,4 +1,4 @@
-@wip
+@db
 Feature: As a data consumer, I want the user information are stored in mySql DB correctly in users table.
 
   Background:
@@ -11,7 +11,6 @@ Feature: As a data consumer, I want the user information are stored in mySql DB 
   Scenario: verify users table columns
     When Execute query to get all columns
     Then verify the below columns are listed in result
-
       | id            |
       | full_name     |
       | email         |
@@ -24,3 +23,5 @@ Feature: As a data consumer, I want the user information are stored in mySql DB 
       | start_date    |
       | end_date      |
       | address       |
+
+

@@ -16,7 +16,6 @@ public class Hooks {
     @Before
     public void setUp(){
 
-        System.out.println("this is coming from BEFORE");
         Driver.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         Driver.getDriver().manage().window().maximize();
         Driver.getDriver().get(ConfigurationReader.getProperty("library_url"));
@@ -26,7 +25,6 @@ public class Hooks {
 
     @After
     public void tearDown(Scenario scenario){
-        System.out.println("this is coming from AFTER");
 
         if(scenario.isFailed()){
             final byte[] screenshot = ((TakesScreenshot) Driver.getDriver()).getScreenshotAs(OutputType.BYTES);

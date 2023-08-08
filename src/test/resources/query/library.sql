@@ -1,18 +1,42 @@
-select count(*) from books;
+select *
+from users;
 
-select count(*) from users;
+select distinct id
+from users;
 
-select * from book_borrow
+select count(*)
+from book_borrow
 where is_returned = 0;
 
-select name from book_categories;
+select *
+from book_categories;
 
-# name,author ,isbn,desc,year
 
-select name,isbn,year,author,description from books
-where name = 'Agile Testing';
+select *
+from books
+where name = 'Clean Code'
+order by isbn desc
+LIMIT 1;
+select name
+from book_categories
+where id = 10;
 
-select full_name from users
-where email = 'librarian55@library';
+select bc.name
+from book_borrow
+         join books b on book_borrow.book_id = b.id
+         join book_categories bc on b.book_category_id = bc.id
+group by bc.name
+order by count(*) desc
+LIMIT 1;
 
-select status from users where email='anisa.stokes@gmail.com';
+select *
+from books;
+
+select name from books
+where name = 'Clean Code';
+
+select email,b.name,bb.borrowed_date from users u
+                                                  inner join book_borrow bb on u.id = bb.user_id
+                                                  inner join books b on bb.book_id = b.id
+where email= 'student58@library' and name= 'Lost Java Book 3'
+order by 3 desc;
